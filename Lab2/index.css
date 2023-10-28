@@ -197,6 +197,7 @@ main {
  
  cite {
      font-weight: bold;
+     text-transform: uppercase;
  }
  
  footer {
