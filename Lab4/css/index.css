@@ -42,10 +42,11 @@ header ul li a {
     color: white;
 }
 
-.hovered{
+.navchoice:hover a{
     color: #e67c35;
     font-size: 1.6em;;
 }
+
 
 .active{
     color: #e67c35;
@@ -223,7 +224,7 @@ article {
 }
 
 .product img {
-    width: 12em;
+    max-width: 100%;
     max-height: 14em;
 }
 
@@ -287,44 +288,29 @@ footer {
     padding: 1em;
 }
 
-/* Table Styles */
-.custom-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 1em;
-}
 
-.custom-table caption {
-    font-weight: bold;
-    margin-bottom: 0.5em;
-}
-
-.custom-table th,
-.custom-table td {
-    padding: 1em;
-    border: 1px solid #ccc;
-    text-align: center;
-}
-
-.custom-table th {
-    background-color: #f5f5f5;
-}
-
-.custom-table tbody tr:nth-child(even) {
-    background-color: #b1f27c;
-}
-
-.custom-table tbody tr:nth-child(odd) {
-    background-color: #b6bbff;
-}
-
-/* Responsive Styles */
-.container {
+.grid-container {
     display: grid;
-    grid-template-columns: 60%;
-    gap: 1em;
-    justify-content: center;
-    padding: 1em;
+    grid-template-columns: repeat(4,1fr);
+}
+
+.grid-header {
+    padding: 10px;
+    border: 1px solid #ddd;
+    background-color: #f9f9f9;
+}
+
+.grid-item {
+    padding: 10px;
+    border: 1px solid #ddd;
+    background-color: #f9f9f9;
+}
+
+.grid-item:nth-child(odd) {
+    background-color: #fd3939;
+}
+.grid-item:nth-child(even) {
+    background-color: rgb(37, 169, 231);
 }
 
 /* Small Screens */
@@ -351,13 +337,8 @@ footer {
         margin: 0.5em;
     }
 
-    .custom-table th,
-    .custom-table td {
-        padding: 0.5em;
-    }
-
-    .container {
-        grid-template-columns: 100%;
+    .grid-item{
+        height: 8em;
     }
 }
 
@@ -381,13 +362,8 @@ footer {
         width: 90%;
     }
 
-    .custom-table th,
-    .custom-table td {
-        padding: 0.8em;
-    }
-
-    .container {
-        grid-template-columns: 80%;
+    .grid-item{
+        height: 6em;
     }
 }
 
@@ -411,12 +387,7 @@ footer {
         width: 80%;
     }
 
-    .custom-table th,
-    .custom-table td {
-        padding: 1em;
-    }
-
-    .container {
-        grid-template-columns: 60%;
+    .grid-item{
+        height: 3em;
     }
 }
