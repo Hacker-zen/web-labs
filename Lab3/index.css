@@ -49,6 +49,10 @@
      object-fit: cover;
      border: 2px solid white;
  }
+
+ .hidden{
+    display: none;
+ }
  
 main {
      padding: 2em;
@@ -261,6 +265,10 @@ main {
     .grid-item{
         height: 8em;
     }
+
+    .grid-container{
+        gap: 5px;
+    }
     
 }
 
@@ -287,6 +295,10 @@ main {
     .grid-item{
         height: 4em;
     }
+
+    .grid-container{
+        gap: 10px;
+    }
 }
 
 /* Big Screens */
@@ -311,4 +323,5 @@ main {
     .grid-item{
         height: 2.5em;
     }
+    
 }
