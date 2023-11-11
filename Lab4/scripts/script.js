@@ -8,18 +8,6 @@
 })();
 
 
-document.addEventListener('DOMContentLoaded', function(){
-     var menuItem = document.querySelectorAll('.navchoice');
-     menuItem.forEach(function(item){
-          item.addEventListener('mouseover', function(){
-               this.children[0].classList.add('hovered')
-          });
-
-          item.addEventListener('mouseout', function(){
-               this.children[0].classList.remove('hovered');
-          })
-     });
-})
 
 document.addEventListener('DOMContentLoaded', function(){
      var currentPage = document.location.href;
