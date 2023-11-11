@@ -4,7 +4,8 @@ document.addEventListener('DOMContentLoaded', function () {
      }
  });
 
- function addItem() {
+ function addItem(event) {
+     event.preventDefault();
      var itemInput = document.getElementById('itemInput');
      var itemText = itemInput.value.trim();
 
