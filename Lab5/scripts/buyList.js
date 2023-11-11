@@ -20,6 +20,7 @@ document.addEventListener('DOMContentLoaded', function () {
      saveItems(items);
      renderItems();
      itemInput.value = '';
+      return false;
  }
 
  function removeItem(index) {
