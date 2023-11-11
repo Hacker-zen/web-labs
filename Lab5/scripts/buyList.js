@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', function () {
  });
 
  function addItem(event) {
+     event = event || window.event;
      event.preventDefault();
      var itemInput = document.getElementById('itemInput');
      var itemText = itemInput.value.trim();
