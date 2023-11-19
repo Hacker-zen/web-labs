@@ -212,30 +212,49 @@ main {
      padding: 1em;
  }
 
-
-.grid-container {
+ .grid-table{
     display: grid;
-    grid-template-columns: repeat(3,1fr);
-}
+    border-collapse: collapse;
+    min-width: 100%;
+    grid-template-columns:  minmax(150px, 1fr)
+                            minmax(150px, 1fr)
+                            minmax(150px, 1fr);
+ }
 
-.grid-header {
-    padding: 10px;
-    border: 1px solid #ddd;
-    background-color: #f9f9f9;
-}
+ .grid-table thead, tbody, tr{
+    display: contents;
+ }
 
-.grid-item {
-    padding: 10px;
-    border: 1px solid #ddd;
-    background-color: #f9f9f9;
-}
+ .grid-table th, td{
+    padding: 1em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+ }
 
-.grid-item:nth-child(odd) {
-    background-color: #fd3939;
-}
-.grid-item:nth-child(even) {
-    background-color: rgb(37, 169, 231);
-}
+ .grid-table th{
+    position: sticky;
+    top: 0;
+    background: #6c7ae0;
+    text-align: center;
+    font-weight: normal;
+    font-size: 1.1rem;
+ }
+
+ .grid-table th:last-child{
+    border: 0;
+ }
+
+ .grid-table td{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: #222222;
+ }
+
+ .grid-table tr:nth-child(odd) td{
+    background: #b78665;
+ }
+
 
 
   /* Small Screens */
@@ -262,13 +281,6 @@ main {
         margin: 0.5em;
     }
 
-    .grid-item{
-        height: 8em;
-    }
-
-    .grid-container{
-        gap: 5px;
-    }
     
 }
 
@@ -292,13 +304,7 @@ main {
         width: 90%;
     }
  
-    .grid-item{
-        height: 4em;
-    }
 
-    .grid-container{
-        gap: 10px;
-    }
 }
 
 /* Big Screens */
@@ -320,8 +326,6 @@ main {
     aside {
         width: 80%;
     }
-    .grid-item{
-        height: 2.5em;
-    }
+  
     
 }
