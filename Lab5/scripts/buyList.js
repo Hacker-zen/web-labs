@@ -4,9 +4,9 @@ document.addEventListener('DOMContentLoaded', function () {
      }
  });
 
- function addItem(event) {
-     event = event || window.event;
-     event.preventDefault();
+
+
+ function addItem() {
      var itemInput = document.getElementById('itemInput');
      var itemText = itemInput.value.trim();
 
@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function () {
      saveItems(items);
      renderItems();
      itemInput.value = '';
-      return false;
+     return false;
  }
 
  function removeItem(index) {
@@ -54,3 +54,8 @@ document.addEventListener('DOMContentLoaded', function () {
  function loadItems() {
      renderItems();
  }
+
+ const form = document.getElementById("buyListForm");
+ form.addEventListener('submit', (event) => {
+    addItem();
+ });
