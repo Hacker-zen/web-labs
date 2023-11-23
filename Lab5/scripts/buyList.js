@@ -4,6 +4,11 @@ document.addEventListener('DOMContentLoaded', function () {
      }
  });
 
+ const form = document.getElementById("buyListForm");
+ form.addEventListener('submit', (event) => {
+    event.preventDefault();
+    addItem();
+ });
 
 
  function addItem() {
@@ -42,12 +47,17 @@ document.addEventListener('DOMContentLoaded', function () {
  function renderItems() {
      var items = getItems();
      var itemList = document.getElementById('buyList');
+     var template = document.getElementById('buyListTemplate');
      itemList.innerHTML = '';
 
+
      items.forEach(function (item, index) {
-         var li = document.createElement('li');
-         li.innerHTML = `<span>${index + 1}. ${item}</span><button onclick="removeItem(${index})">X</button>`;
-         itemList.appendChild(li);
+         var clone = template.content.cloneNode(true);
+         clone.querySelector('span').textContent = `${index + 1}. ${item}`;
+         clone.querySelector('button').addEventListener('click', function(){
+            removeItem(index);
+         })
+         itemList.appendChild(clone);
      });
  }
 
@@ -55,7 +65,4 @@ document.addEventListener('DOMContentLoaded', function () {
      renderItems();
  }
 
- const form = document.getElementById("buyListForm");
- form.addEventListener('submit', (event) => {
-    addItem();
- });
+ 
